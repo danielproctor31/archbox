@@ -4,3 +4,5 @@ stow
 git
 vim
 nano
+wget
+curl
