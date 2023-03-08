@@ -12,10 +12,6 @@ COPY files/tmp /tmp
 # install packages
 RUN pacman -Syu --needed --noconfirm - < /tmp/packages
 
-# install host-spawn
-RUN wget https://github.com/1player/host-spawn/releases/download/1.4.1/host-spawn-x86_64 -o /bin/host-spawn
-RUN chmod u+x /bin/host-spawn
-
 # setup host-exec
 RUN chmod u+x /tmp/host-exec.sh
 RUN /tmp/host-exec.sh
