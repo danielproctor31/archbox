@@ -6,3 +6,4 @@ vim
 nano
 wget
 curl
+openssh
