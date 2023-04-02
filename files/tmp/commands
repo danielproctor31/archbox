@@ -1,5 +1,5 @@
 docker
-docker-compose
+podman-compose
 podman
 flatpak
 rpm-ostree
