@@ -5,7 +5,4 @@ git
 vim
 nano
 wget
-curl
 openssh
-procps-ng
-file
