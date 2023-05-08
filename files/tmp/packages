@@ -7,3 +7,5 @@ nano
 wget
 curl
 openssh
+procps-ng
+file
