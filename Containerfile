@@ -13,11 +13,22 @@ WORKDIR /tmp
 # install packages
 RUN pacman -Syu --needed --noconfirm - < /tmp/packages
 
+# setup user to install yay
+ARG user=makepkg
+RUN useradd --system --create-home $user \
+  && echo "$user ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/$user
+USER $user
+WORKDIR /home/$user
+
 # install yay
 RUN git clone https://aur.archlinux.org/yay-bin.git && \
       chown -R user:user ./yay-bin && \
       cd yay-bin && \
       makepkg -si
+
+# switch back to root and delete temp user
+USER root
+RUN userdel -r $user
 
 # setup host-exec
 RUN chmod u+x /tmp/host-exec.sh
