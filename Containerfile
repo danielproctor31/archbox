@@ -14,7 +14,10 @@ WORKDIR /tmp
 RUN pacman -Syu --needed --noconfirm - < /tmp/packages
 
 # install yay
-RUN git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
+RUN git clone https://aur.archlinux.org/yay-bin.git && \
+      chown -R user:user ./yay-bin && \
+      cd yay-bin && \
+      makepkg -si
 
 # setup host-exec
 RUN chmod u+x /tmp/host-exec.sh
