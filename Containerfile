@@ -29,14 +29,6 @@ RUN git clone https://aur.archlinux.org/yay-bin.git && \
 USER root
 RUN userdel -r $user
 
-# setup yay
-RUN yay -Y --gendb && \
-      yay -Syu --devel --noconfirm && \
-      yay -Y --devel --save
-
-# install aur packages
-RUN yay -Syu --needed --noconfirm - < /tmp/packages-aur
-
 # setup host-exec
 RUN chmod u+x /tmp/host-exec.sh
 RUN /tmp/host-exec.sh
