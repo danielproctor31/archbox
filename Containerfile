@@ -8,6 +8,10 @@ LABEL com.github.containers.toolbox="true" \
       maintainer="dan@danielproctor.dev"
 
 COPY files/tmp /tmp
+WORKDIR /tmp
+
+# install yay
+RUN git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
 
 # install packages
 RUN pacman -Syu --needed --noconfirm - < /tmp/packages
