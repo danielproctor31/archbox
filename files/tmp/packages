@@ -2,7 +2,7 @@ zsh
 starship
 stow
 git
-vim
+neovim
 nano
 wget
 openssh
