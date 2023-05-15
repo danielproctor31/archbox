@@ -23,7 +23,7 @@ WORKDIR /home/$user
 # install yay
 RUN git clone https://aur.archlinux.org/yay-bin.git && \
       cd yay-bin && \
-      makepkg -si
+      makepkg -si --noconfirm
 
 # switch back to root and delete temp user
 USER root
