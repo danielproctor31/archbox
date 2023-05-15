@@ -53,3 +53,9 @@ The container can be built with Docker or Podman:
 ```
 podman build -f Containerfile .
 ```
+
+References:
+- https://github.com/89luca89/distrobox
+- https://github.com/89luca89/distrobox/blob/main/docs/usage/distrobox-host-exec.md
+- https://github.com/Jguer/yay
+- https://docs.sigstore.dev/cosign/overview/
