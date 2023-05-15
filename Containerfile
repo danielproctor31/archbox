@@ -22,7 +22,6 @@ WORKDIR /home/$user
 
 # install yay
 RUN git clone https://aur.archlinux.org/yay-bin.git && \
-      chown -R user:user ./yay-bin && \
       cd yay-bin && \
       makepkg -si
 
