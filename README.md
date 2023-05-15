@@ -15,17 +15,28 @@ Update with:
 distrobox upgrade archbox
 ```
 
-Application shortcuts can be exported to the host using `distrobox-export`.
+### First Run
 
-Example using VSCode:
+Setup development package database for yay:
 ```
-distrobox-export --app code
+yay -Y --gendb && \
+  yay -Syu --devel --noconfirm && \
+  yay -Y --devel --save
+```
+
+AUR packages can be installed with yay:
+```
+yay -Syu --needed <package_name>
+```
+
+Application shortcuts can be exported to the host using `distrobox-export`:
+```
+distrobox-export --app <package_name>
 ```
 
 Packages can be added/removed by updating the file `files/tmp/packages`.
 
-
-## distrbox-host-exec
+### distrbox-host-exec
 
 [distrbox-host-exec](https://github.com/89luca89/distrobox/blob/main/docs/usage/distrobox-host-exec.md) allows software on the host to be called from distrobox. Update `files/tmp/commands` to add/remove as needed.
 
