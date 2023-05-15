@@ -10,11 +10,11 @@ LABEL com.github.containers.toolbox="true" \
 COPY files/tmp /tmp
 WORKDIR /tmp
 
-# install yay
-RUN git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
-
 # install packages
 RUN pacman -Syu --needed --noconfirm - < /tmp/packages
+
+# install yay
+RUN git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
 
 # setup host-exec
 RUN chmod u+x /tmp/host-exec.sh
