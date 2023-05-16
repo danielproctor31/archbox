@@ -26,7 +26,7 @@ yay -Y --gendb && \
 
 AUR packages can be installed with yay:
 ```
-yay -Syu --needed <package_name>
+yay -Syu <package_name>
 ```
 
 Application shortcuts can be exported to the host using `distrobox-export`:
