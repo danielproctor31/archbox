@@ -40,6 +40,11 @@ Packages can be added/removed by updating the file `files/tmp/packages`.
 
 [distrbox-host-exec](https://github.com/89luca89/distrobox/blob/main/docs/usage/distrobox-host-exec.md) allows software on the host to be called from distrobox. Update `files/tmp/commands` to add/remove as needed.
 
+Additional commands can be added after installation using:
+```
+sudo ln -s /usr/bin/distrobox-host-exec /usr/local/bin/<command>
+```
+
 ## Verification
 This image is signed with [sisgstore's cosign](https://docs.sigstore.dev/cosign/overview/). You can verify the signature by downloading the cosign.pub key from this repo and running the following command:
 
