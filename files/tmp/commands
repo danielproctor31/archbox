@@ -1,3 +1,4 @@
 podman
-docker
 podman-compose
+docker
+docker-compose
